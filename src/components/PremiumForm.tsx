@@ -255,7 +255,7 @@ export default function PremiumForm({ onSubmit, isLoading, initialData }: Premiu
         {/* Form Content */}
         <Box sx={{ flex: 1, overflowY: 'auto' }}>
           <form onSubmit={handleSubmit}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, pt: 2 }}>
               {/* Blog Title */}
               <Box>
                 <TextField
@@ -525,9 +525,23 @@ export default function PremiumForm({ onSubmit, isLoading, initialData }: Premiu
               borderRadius: '12px',
               textTransform: 'none',
               boxShadow: '0 8px 25px rgba(99, 102, 241, 0.3)',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              '&:hover': {
+                transform: 'translateY(-2px)',
+                boxShadow: '0 12px 35px rgba(99, 102, 241, 0.4)',
+                background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c026d3 100%)',
+              },
+              '&:active': {
+                transform: 'translateY(0)',
+                boxShadow: '0 6px 20px rgba(99, 102, 241, 0.3)',
+              },
               '&:disabled': {
                 background: 'rgba(148, 163, 184, 0.2)',
                 boxShadow: 'none',
+                '&:hover': {
+                  transform: 'none',
+                  background: 'rgba(148, 163, 184, 0.2)',
+                },
               },
             }}
             startIcon={<AutoAwesome sx={{ fontSize: 24 }} />}
